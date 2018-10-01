@@ -1,10 +1,10 @@
 import time
 
-class timer:
+class Timer:
     def __init__(self):
         self.startTime = time.time()
 
-    def getTime(self):
+    def get(self):
         return time.time()-self.startTime
     
     def reset(self):

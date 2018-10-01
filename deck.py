@@ -17,20 +17,6 @@ class Deck():
 
         shuffle(self.cards)
 
-    def __len__(self):
-        return len(self.cards)
-
-    def draw(self, amount=1):
-        deal = self.cards[-1 : -(amount+1) : -1]
-        self.cards = self.cards[: -amount]
-
-        # only return the card and not the list if it's only one
-        return deal[0] if amount==1 else deal
-
-    def generator(self):
-        while True:
-            yield self.cards.pop()
-
     def reshuffle(self):
         shuffle(self.cards)
 
@@ -39,7 +25,3 @@ class Deck():
 
     def rebuild(self):
         self.__init__(1,self.suits,self.ranks,self.values)
-
-if __name__ == "__main__":
-    SK = SquareKing()
-    SK.game()
